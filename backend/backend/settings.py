@@ -74,10 +74,15 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'stargazing_db',
+        'USER': 'stargazing_user',
+        'PASSWORD': 'stargazing_password',
+        'HOST': 'localhost',   # Since we mapped 5432:5432
+        'PORT': '5432',
     }
 }
+
 
 
 # Password validation

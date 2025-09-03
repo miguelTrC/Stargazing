@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    container_name: stargazing_postgres
+    restart: always
+    environment:
+      POSTGRES_DB: stargazing_db
+      POSTGRES_USER: stargazing_user
+      POSTGRES_PASSWORD: stargazing_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
